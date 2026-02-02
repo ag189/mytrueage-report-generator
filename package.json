@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^143.0.4",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
     "puppeteer": "^24.36.1",
+    "puppeteer-core": "^24.36.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "recharts": "^3.7.0"

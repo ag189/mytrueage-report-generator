@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import puppeteer from 'puppeteer';
 import { ReportData } from '@/types/report.types';
+import chromium from '@sparticuz/chromium';
+import puppeteerCore from 'puppeteer-core';
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,15 +24,20 @@ export async function POST(request: NextRequest) {
     const dataParam = encodeURIComponent(JSON.stringify(data));
     const previewUrl = `${baseUrl}/preview?data=${dataParam}`;
     
-    // Launch Puppeteer
+    // Launch Puppeteer (Vercel-compatible)
+    const isVercel = Boolean(process.env.VERCEL);
+    const puppeteer = isVercel ? puppeteerCore : (await import('puppeteer')).default;
     const browser = await puppeteer.launch({
       headless: true,
-      args: [
-        '--no-sandbox', 
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
+      args: isVercel
+        ? chromium.args
+        : [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+          ],
+      executablePath: isVercel ? await chromium.executablePath() : undefined,
     });
     
     const page = await browser.newPage();
@@ -116,3 +122,4 @@ export async function POST(request: NextRequest) {
 
 // Set a longer timeout for this API route
 export const maxDuration = 60;
+export const runtime = 'nodejs';

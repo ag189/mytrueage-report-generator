@@ -96,9 +96,9 @@ export async function POST(request: NextRequest) {
     
     // Return PDF
     const filename = `myTrueAge-Report-${data.name.replace(/\s/g, '_')}-${Date.now()}.pdf`;
-    const pdfBuffer = pdf.buffer.slice(pdf.byteOffset, pdf.byteOffset + pdf.byteLength);
+    const pdfArrayBuffer = Uint8Array.from(pdf).buffer;
     
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(pdfArrayBuffer, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,

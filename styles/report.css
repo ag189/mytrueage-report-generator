@@ -24,7 +24,7 @@
 .page {
   width: 210mm;
   height: 297mm;
-  background: var(--paper-white, #ffffff);
+  background: var(--paper-cream);
   position: relative;
   padding: 0;
   box-sizing: border-box;
@@ -53,9 +53,30 @@
   background: var(--brand-blue, #1999D6);
 }
 
+/* Top-right radial glow - full page, fades naturally to edges (no rectangular clip) */
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 120% 100% at 100% 0%,
+    rgba(25, 153, 214, 0.1) 0%,
+    rgba(25, 153, 214, 0.05) 38%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cover-page::after {
+  display: none;
+}
+
 /* Page Content Area with Premium Margins */
 .page-content {
-  padding: 48px 48px 48px 64px;
+  position: relative;
+  z-index: 1;
+  padding: 48px 48px 56px 64px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -192,6 +213,10 @@
   --neutral-200: #f0f0ee;
   --neutral-300: #e0e0de;
   --neutral-800: #1a1a1a;
+  /* Editorial paper */
+  --paper-cream: #f7f4f0;
+  /* Callout accent - green complementary to brand blue */
+  --callout-accent-green: #228b52;
 }
 
 /* ========================================
@@ -301,9 +326,9 @@
    HEADERS & FOOTERS - Editorial Style
    ======================================== */
 .page-header {
-  margin-bottom: 28px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--neutral-300, #e0e0de);
+  margin: -48px -48px 28px 0;
+  padding: 20px 48px 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -314,10 +339,14 @@
 }
 
 .page-header-icon {
+  position: relative;
   flex-shrink: 0;
   margin-left: 16px;
   color: var(--brand-blue, #1999D6);
-  opacity: 0.85;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Compact header for bio-age page */
@@ -353,9 +382,11 @@
 
 .page-footer {
   position: absolute;
-  bottom: 32px;
-  left: 64px;
-  right: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 48px 16px 64px;
+  border-top: 1px solid rgba(25, 153, 214, 0.35);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -526,6 +557,15 @@
   letter-spacing: -0.03em;
   color: var(--ink-black, #0a0a0a);
   margin: 0 0 10px;
+}
+
+.cover-brand-logo {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 0 10px;
+  display: block;
 }
 
 .cover-subtitle {
@@ -822,24 +862,15 @@
 .callout-box {
   padding: 24px 24px 24px 28px;
   background: var(--neutral-100, #fafaf8);
-  border-left: 3px solid var(--ink-black, #0a0a0a);
+  border-left: 3px solid var(--callout-accent-green);
   margin: 24px 0;
 }
 
-.callout-box.success {
-  border-left-color: var(--success-color, #2d5a47);
-}
-
-.callout-box.warning {
-  border-left-color: var(--warning-color, #9a8355);
-}
-
-.callout-box.danger {
-  border-left-color: var(--danger-color, #6b2d3c);
-}
-
+.callout-box.success,
+.callout-box.warning,
+.callout-box.danger,
 .callout-box.info {
-  border-left-color: var(--secondary-accent, #1e3a5f);
+  border-left-color: var(--callout-accent-green);
 }
 
 /* ========================================

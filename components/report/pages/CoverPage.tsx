@@ -18,7 +18,11 @@ export default function CoverPage({ data }: CoverPageProps) {
           <div className="cover-hero-content">
             <div className="cover-card">
               <div className="cover-card-left">
-                <h1 className="cover-title">myDNAge</h1>
+                <img
+                  src="/images/age-path-logo.png"
+                  alt="AgePath"
+                  className="cover-brand-logo"
+                />
                 <p className="cover-subtitle">
                   Scientific Insights to reverse the pace of aging
                 </p>

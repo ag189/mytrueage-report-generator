@@ -92,8 +92,8 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
     <div className="bio-age-chart-frame">
       <div className="bio-age-chart-row">
         <div className="bio-age-chart-plot">
-          <ResponsiveContainer width="100%" height={460}>
-            <ScatterChart margin={{ top: 12, right: 20, bottom: 48, left: 56 }}>
+          <ResponsiveContainer width="100%" height="100%" minHeight={480}>
+            <ScatterChart margin={{ top: 8, right: 8, bottom: 40, left: 44 }}>
               <Customized component={QuadrantOverlay} />
               <CartesianGrid 
                 strokeDasharray="none" 

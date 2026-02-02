@@ -32,9 +32,6 @@ export default function ResultsPage2({ data, metrics }: ResultsPage2Props) {
       {/* Key metric display */}
       <div style={{ marginTop: '20px' }}>
         <p className="result-label">DunedinPACE Score</p>
-        <p className={`result-value ${metrics.paceCategory === 'slower' ? 'positive' : metrics.paceCategory === 'faster' ? 'negative' : ''}`}>
-          {data.dunedinPACE.toFixed(3)}
-        </p>
       </div>
 
       {/* Gauge Chart */}

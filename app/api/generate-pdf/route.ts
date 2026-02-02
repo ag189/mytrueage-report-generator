@@ -16,9 +16,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate the preview URL
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}` 
-      : 'http://localhost:3000';
+    const forwardedProto = request.headers.get('x-forwarded-proto') ?? 'https';
+    const forwardedHost = request.headers.get('x-forwarded-host') ?? request.headers.get('host');
+    const origin = request.headers.get('origin');
+    const baseUrl = origin
+      ?? (forwardedHost ? `${forwardedProto}://${forwardedHost}` : undefined)
+      ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
     
     // Create a URL-safe JSON string
     const dataParam = encodeURIComponent(JSON.stringify(data));
@@ -46,6 +49,12 @@ export async function POST(request: NextRequest) {
     await page.setViewport({ width: 794, height: 1123 }); // A4 in pixels at 96 DPI
     
     // Navigate to preview page
+    const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+    if (bypassSecret) {
+      await page.setExtraHTTPHeaders({
+        'x-vercel-protection-bypass': bypassSecret,
+      });
+    }
     await page.goto(previewUrl, {
       waitUntil: 'networkidle0',
       timeout: 30000

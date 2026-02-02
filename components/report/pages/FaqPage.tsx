@@ -1,16 +1,17 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { HelpCircle } from 'lucide-react';
 
 export default function FaqPage() {
   return (
     <PageWrapper pageNumber={8} className="faq-page">
-      <PageHeader title="Frequently Asked Questions" subtitle="Quick answers to common concerns" />
+      <PageHeader title="Frequently Asked Questions" subtitle="Quick answers to common concerns" icon={HelpCircle} />
 
       <div className="two-column-grid">
         <div>
           <div className="faq-item">
-            <h3>How accurate is myTrueAge?</h3>
+            <h3>How accurate is myDNAge?</h3>
             <p>
               PCGrimAge and DunedinPACE are among the most validated epigenetic
               algorithms. Results are informative estimates, not absolute values.

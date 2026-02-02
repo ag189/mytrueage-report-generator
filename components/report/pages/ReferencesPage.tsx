@@ -1,11 +1,12 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { BookOpen } from 'lucide-react';
 
 export default function ReferencesPage() {
   return (
     <PageWrapper pageNumber={10}>
-      <PageHeader title="References" subtitle="Key studies and sources" />
+      <PageHeader title="References" subtitle="Key studies and sources" icon={BookOpen} />
 
       <ol className="references-list">
         <li>Horvath S. DNA methylation age of human tissues and cell types. Genome Biology 14, R115 (2013).</li>

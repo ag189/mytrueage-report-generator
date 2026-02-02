@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Pill } from 'lucide-react';
 
 export default function SupplementsLifestylePage() {
   return (
@@ -8,6 +9,7 @@ export default function SupplementsLifestylePage() {
       <PageHeader
         title="Recommendations | Supplements"
         subtitle="Targeted support for healthy aging"
+        icon={Pill}
       />
 
       <div className="two-column-text">

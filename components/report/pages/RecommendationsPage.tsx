@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Lightbulb } from 'lucide-react';
 
 export default function RecommendationsPage() {
   return (
@@ -8,6 +9,7 @@ export default function RecommendationsPage() {
       <PageHeader
         title="Recommendations"
         subtitle="High-impact actions to slow biological aging"
+        icon={Lightbulb}
       />
 
       <div className="content-block">

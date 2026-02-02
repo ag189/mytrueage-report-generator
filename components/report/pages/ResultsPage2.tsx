@@ -2,6 +2,7 @@ import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
 import PaceOfAgingGauge from '../charts/PaceOfAgingGauge';
+import { Activity } from 'lucide-react';
 import { ReportData, CalculatedMetrics } from '@/types/report.types';
 
 interface ResultsPage2Props {
@@ -27,6 +28,7 @@ export default function ResultsPage2({ data, metrics }: ResultsPage2Props) {
       <PageHeader 
         title="Pace of Aging" 
         subtitle="Your Rate of Biological Aging"
+        icon={Activity}
       />
 
       {/* Key metric display */}

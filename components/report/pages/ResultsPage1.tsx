@@ -2,6 +2,7 @@ import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
 import BioAgeScatterPlot from '../charts/BioAgeScatterPlot';
+import { Dna } from 'lucide-react';
 import { ReportData, CalculatedMetrics } from '@/types/report.types';
 import { formatAge } from '@/lib/calculations';
 
@@ -19,6 +20,7 @@ export default function ResultsPage1({ data, metrics }: ResultsPage1Props) {
       <PageHeader 
         title="Biological Age" 
         subtitle="Your Biological Age Assessment"
+        icon={Dna}
       />
 
       <div className="bio-age-layout">

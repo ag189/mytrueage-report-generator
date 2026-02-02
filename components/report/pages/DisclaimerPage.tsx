@@ -1,11 +1,12 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { AlertTriangle } from 'lucide-react';
 
 export default function DisclaimerPage() {
   return (
     <PageWrapper pageNumber={9}>
-      <PageHeader title="Disclaimer" subtitle="Research use and limitations" />
+      <PageHeader title="Disclaimer" subtitle="Research use and limitations" icon={AlertTriangle} />
 
       <div className="content-block">
         <h3>Research Use & Limitations</h3>

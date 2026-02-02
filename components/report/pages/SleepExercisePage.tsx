@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Heart } from 'lucide-react';
 
 export default function SleepExercisePage() {
   return (
@@ -8,6 +9,7 @@ export default function SleepExercisePage() {
       <PageHeader
         title="Recommendations | Lifestyle"
         subtitle="Sleep & exercise essentials"
+        icon={Heart}
       />
 
       <div className="two-column-text">

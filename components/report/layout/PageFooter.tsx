@@ -4,10 +4,10 @@ interface PageFooterProps {
   text?: string;
 }
 
-export default function PageFooter({ text = 'myTrueAge Report | Powered by GENESSENSE & MEDGENOME' }: PageFooterProps) {
+export default function PageFooter({ text = '©myDNAge | Powered by GenePathDX' }: PageFooterProps) {
   return (
     <div className="page-footer">
-      {text}
+      <span className="text-muted">{text}</span>
     </div>
   );
 }

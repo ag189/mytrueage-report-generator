@@ -58,7 +58,7 @@ export default function Home() {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `myTrueAge-Report-${reportData.name.replace(/\s/g, '_')}-${Date.now()}.pdf`;
+      a.download = `myDNAge-Report-${reportData.name.replace(/\s/g, '_')}-${Date.now()}.pdf`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              myTrueAge Report Generator
+              myDNAge Report Generator
             </h1>
             <p className="text-lg text-gray-600">
               Generate professional biological aging reports

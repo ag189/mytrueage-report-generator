@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { User } from 'lucide-react';
 import { ReportData } from '@/types/report.types';
 import { formatDate } from '@/lib/calculations';
 
@@ -11,7 +12,7 @@ interface PersonalInfoPageProps {
 export default function PersonalInfoPage({ data }: PersonalInfoPageProps) {
   return (
     <PageWrapper pageNumber={2}>
-      <PageHeader title="Personal Information" />
+      <PageHeader title="Personal Information" icon={User} />
 
       {/* Clean, minimal info rows */}
       <div style={{ marginTop: '48px' }}>

@@ -1,13 +1,15 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Microscope } from 'lucide-react';
 
 export default function SciencePage() {
   return (
     <PageWrapper pageNumber={6}>
       <PageHeader
-        title="The Science Behind myTrueAge"
+        title="The Science Behind myDNAge"
         subtitle="Epigenetic clocks and population calibration"
+        icon={Microscope}
       />
 
       <div className="content-block">
@@ -26,7 +28,7 @@ export default function SciencePage() {
           <div className="content-block">
             <h3>How We Measure Biological Age</h3>
             <p className="mt-2">
-              Your myTrueAge results are derived from DNA methylation patterns in
+              Your myDNAge results are derived from DNA methylation patterns in
               blood. Methylation is a chemical tag that affects gene expression
               without changing the DNA sequence. These patterns shift in predictable
               ways with aging.

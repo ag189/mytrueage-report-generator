@@ -19,7 +19,7 @@ export default function PageWrapper({ children, className = '', pageNumber, noPa
       )}
       {pageNumber && (
         <div className="page-footer">
-          <span className="text-muted">©MyTrueAge | Powered by GenePathDX</span>
+          <span className="text-muted">©myDNAge | Powered by GenePathDX</span>
           <span className="page-number">{pageNumber}</span>
         </div>
       )}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Apple } from 'lucide-react';
 
 export default function DietPage() {
   return (
@@ -8,6 +9,7 @@ export default function DietPage() {
       <PageHeader
         title="Recommendations | Diet"
         subtitle="Nutritional shifts that slow biological aging"
+        icon={Apple}
       />
 
       <div className="two-column-text">

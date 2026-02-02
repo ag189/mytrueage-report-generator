@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
+import { Brain } from 'lucide-react';
 
 export default function UnderstandingResultsPage() {
   return (
@@ -8,6 +9,7 @@ export default function UnderstandingResultsPage() {
       <PageHeader
         title="Understanding Your Results"
         subtitle="How biological age and pace of aging relate to health"
+        icon={Brain}
       />
 
       <div className="two-column-text">

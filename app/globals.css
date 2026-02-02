@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  
+  /* Premium Color Palette */
+  --ink-black: #0a0a0a;
+  --ink-dark: #1a1a1a;
+  --ink-medium: #3d3d3d;
+  --ink-light: #6b6b6b;
+  --paper-white: #ffffff;
+  --paper-cream: #fafaf8;
+  --accent-gold: #9a8355;
+  --accent-navy: #1e3a5f;
+  --accent-emerald: #2d5a47;
+  --accent-burgundy: #6b2d3c;
+  
+  /* Typography */
+  --font-heading: 'Instrument Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+/* Force all elements to have sharp corners */
+*::before,
+*::after {
+  border-radius: 0 !important;
+}

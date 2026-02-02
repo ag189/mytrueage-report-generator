@@ -1,0 +1,117 @@
+import { NextRequest, NextResponse } from 'next/server';
+import puppeteer from 'puppeteer';
+import { ReportData } from '@/types/report.types';
+
+export async function POST(request: NextRequest) {
+  try {
+    const data: ReportData = await request.json();
+    
+    // Validate data
+    if (!data.name || !data.biologicalAge) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    // Generate the preview URL
+    const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : 'http://localhost:3000';
+    
+    // Create a URL-safe JSON string
+    const dataParam = encodeURIComponent(JSON.stringify(data));
+    const previewUrl = `${baseUrl}/preview?data=${dataParam}`;
+    
+    // Launch Puppeteer
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        '--no-sandbox', 
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    });
+    
+    const page = await browser.newPage();
+    
+    // Set viewport for consistent rendering
+    await page.setViewport({ width: 794, height: 1123 }); // A4 in pixels at 96 DPI
+    
+    // Navigate to preview page
+    await page.goto(previewUrl, {
+      waitUntil: 'networkidle0',
+      timeout: 30000
+    });
+    
+    // Wait a bit for charts to render
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Add print media CSS to ensure proper rendering
+    await page.addStyleTag({
+      content: `
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .report-preview-container {
+          background: white !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .report-pages-wrapper {
+          max-width: none !important;
+          gap: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .page {
+          margin: 0 !important;
+          box-shadow: none !important;
+          page-break-after: always !important;
+          break-after: page !important;
+        }
+        .page:last-child {
+          page-break-after: auto !important;
+          break-after: auto !important;
+        }
+      `
+    });
+    
+    // Generate PDF
+    const pdf = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
+      preferCSSPageSize: true,
+      omitBackground: false
+    });
+    
+    await browser.close();
+    
+    // Return PDF
+    const filename = `myTrueAge-Report-${data.name.replace(/\s/g, '_')}-${Date.now()}.pdf`;
+    
+    return new NextResponse(pdf, {
+      headers: {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename="${filename}"`,
+      },
+    });
+    
+  } catch (error) {
+    console.error('PDF generation error:', error);
+    return NextResponse.json(
+      { error: 'Failed to generate PDF', details: error instanceof Error ? error.message : 'Unknown error' },
+      { status: 500 }
+    );
+  }
+}
+
+// Set a longer timeout for this API route
+export const maxDuration = 60;

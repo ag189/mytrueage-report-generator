@@ -1,0 +1,940 @@
+/* ========================================
+   PREMIUM MAGAZINE-STYLE REPORT DESIGN
+   Minimalist • Elevated • Luxurious
+   ======================================== */
+
+/* Report Preview Container */
+.report-preview-container {
+  background: #e8e8e8;
+  min-height: 100vh;
+  padding: 3rem 0;
+}
+
+.report-pages-wrapper {
+  max-width: 210mm;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ========================================
+   PAGE SETUP - Magazine Foundation
+   ======================================== */
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: var(--paper-white, #ffffff);
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  page-break-after: always;
+  page-break-inside: avoid;
+  break-after: page;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+/* Left Vertical Accent Bar - Magazine Margin Indicator */
+.page::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--ink-black, #0a0a0a);
+}
+
+/* Page Content Area with Premium Margins */
+.page-content {
+  padding: 48px 48px 48px 64px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  .report-preview-container {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  .report-pages-wrapper {
+    max-width: none;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY - Luxury Magazine Style
+   ======================================== */
+.page h1 { 
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 42pt; 
+  font-weight: 600; 
+  line-height: 1.1;
+  color: var(--ink-black, #0a0a0a);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.page h2 { 
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 28pt; 
+  font-weight: 600; 
+  line-height: 1.15;
+  color: var(--ink-black, #0a0a0a);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.page h3 { 
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 16pt; 
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink-dark, #1a1a1a);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.page h3 + p,
+.page h3 + ul {
+  margin-top: 8px;
+}
+
+.page h4 {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink-dark, #1a1a1a);
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.page p { 
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5pt; 
+  line-height: 1.7; 
+  color: var(--ink-medium, #3d3d3d);
+  margin: 0;
+  font-weight: 400;
+}
+
+.page .lead-text {
+  font-size: 13pt;
+  line-height: 1.6;
+  color: var(--ink-dark, #1a1a1a);
+  font-weight: 400;
+}
+
+.lead-text + .content-block {
+  margin-top: 20px;
+}
+
+.content-block + .content-block {
+  margin-top: 20px;
+}
+
+.small-text {
+  font-size: 9pt;
+  line-height: 1.5;
+  color: var(--ink-light, #6b6b6b);
+  font-weight: 400;
+}
+
+.caption-text {
+  font-size: 8pt;
+  line-height: 1.4;
+  color: var(--ink-light, #6b6b6b);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ========================================
+   COLOR PALETTE - Refined & Sophisticated
+   ======================================== */
+:root {
+  --primary-accent: #0a0a0a;
+  --secondary-accent: #1e3a5f;
+  --success-color: #2d5a47;
+  --warning-color: #9a8355;
+  --danger-color: #6b2d3c;
+  --neutral-100: #fafaf8;
+  --neutral-200: #f0f0ee;
+  --neutral-300: #e0e0de;
+  --neutral-800: #1a1a1a;
+}
+
+/* ========================================
+   LAYOUT COMPONENTS - Minimalist
+   ======================================== */
+
+/* Premium Section Divider */
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--ink-black, #0a0a0a);
+  margin: 32px 0;
+}
+
+.section-divider-thin {
+  width: 100%;
+  height: 1px;
+  background: var(--neutral-300, #e0e0de);
+  margin: 24px 0;
+}
+
+/* Info Row - Clean horizontal layout */
+.info-row {
+  display: flex;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--neutral-200, #f0f0ee);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--ink-light, #6b6b6b);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--ink-black, #0a0a0a);
+}
+
+/* Stat Block - Magazine Number Display */
+.stat-block {
+  margin: 24px 0;
+}
+
+.stat-number {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 56pt;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink-black, #0a0a0a);
+  letter-spacing: -0.03em;
+}
+
+.stat-unit {
+  font-family: 'Inter', sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  color: var(--ink-light, #6b6b6b);
+  margin-left: 8px;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--ink-light, #6b6b6b);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+/* Status Indicator - Minimal */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--neutral-100, #fafaf8);
+  border-left: 3px solid var(--ink-black, #0a0a0a);
+}
+
+.status-indicator.positive {
+  border-left-color: var(--success-color, #2d5a47);
+}
+
+.status-indicator.negative {
+  border-left-color: var(--danger-color, #6b2d3c);
+}
+
+.status-indicator.neutral {
+  border-left-color: var(--warning-color, #9a8355);
+}
+
+/* ========================================
+   HEADERS & FOOTERS - Editorial Style
+   ======================================== */
+.page-header {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--neutral-300, #e0e0de);
+}
+
+.page-header h2 {
+  margin-bottom: 8px;
+}
+
+.page-header .subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: var(--ink-light, #6b6b6b);
+  margin: 0;
+}
+
+.action-plan-page .page-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 32px;
+  left: 64px;
+  right: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  color: var(--ink-light, #6b6b6b);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.page-number {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--ink-black, #0a0a0a);
+}
+
+/* ========================================
+   COVER PAGE - Premium Magazine Cover
+   ======================================== */
+.cover-page {
+  padding: 0;
+  background: var(--ink-black, #0a0a0a);
+  color: var(--paper-white, #ffffff);
+}
+
+.cover-page::before {
+  background: var(--paper-white, #ffffff);
+  opacity: 0.15;
+}
+
+.cover-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.cover-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/cover.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.01);
+}
+
+.cover-hero-blur {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/cover.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  transform: scale(1.05);
+  opacity: 0.85;
+  -webkit-mask-image: radial-gradient(
+    circle at 90% 10%,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  mask-image: radial-gradient(
+    circle at 90% 10%,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.cover-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.14);
+}
+
+.cover-hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 64px 48px 64px;
+}
+
+.cover-card {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 28px 32px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cover-bottom {
+  padding: 48px 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cover-powered {
+  font-family: 'Inter', sans-serif;
+  font-size: 6pt;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-light, #6b6b6b);
+  margin: 0;
+}
+
+.cover-powered-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.cover-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+
+.cover-title {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 64pt;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink-black, #0a0a0a);
+  margin: 0 0 10px;
+}
+
+.cover-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--ink-dark, #1a1a1a);
+  max-width: 440px;
+  margin: 0;
+}
+
+/* ========================================
+   RESULTS DISPLAY - Magazine Feature Style
+   ======================================== */
+.results-summary {
+  margin: 32px 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.result-highlight {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--neutral-200, #f0f0ee);
+}
+
+.result-highlight:last-child {
+  border-bottom: none;
+}
+
+.result-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--ink-light, #6b6b6b);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.result-value {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 36pt;
+  font-weight: 600;
+  color: var(--ink-black, #0a0a0a);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.result-value.positive {
+  color: var(--success-color, #2d5a47);
+}
+
+.result-value.negative {
+  color: var(--danger-color, #6b2d3c);
+}
+
+.result-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 400;
+  color: var(--ink-medium, #3d3d3d);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* Comparison Display */
+.comparison-block {
+  display: flex;
+  gap: 64px;
+  margin: 40px 0;
+}
+
+.comparison-item {
+  flex: 1;
+}
+
+/* ========================================
+   CHARTS - Clean Magazine Integration
+   ======================================== */
+.chart-container {
+  width: 100%;
+  margin: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  color: var(--ink-light, #6b6b6b);
+  text-align: center;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ========================================
+   INFO CARDS - Removed boxes, clean rows
+   ======================================== */
+.info-card {
+  background: transparent;
+  border: none;
+  border-left: none;
+  padding: 20px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--neutral-200, #f0f0ee);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.info-card:last-child {
+  border-bottom: none;
+}
+
+/* Icon styling - more subtle */
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-black, #0a0a0a);
+  background: var(--neutral-100, #fafaf8);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.icon-circle.orange,
+.icon-circle.green,
+.icon-circle.blue,
+.icon-circle.purple {
+  background: var(--neutral-100, #fafaf8);
+  color: var(--ink-black, #0a0a0a);
+}
+
+/* ========================================
+   CALLOUT BOXES - Minimal with left accent
+   ======================================== */
+.callout-box {
+  padding: 24px 24px 24px 28px;
+  background: var(--neutral-100, #fafaf8);
+  border-left: 3px solid var(--ink-black, #0a0a0a);
+  margin: 24px 0;
+}
+
+.callout-box.success {
+  border-left-color: var(--success-color, #2d5a47);
+}
+
+.callout-box.warning {
+  border-left-color: var(--warning-color, #9a8355);
+}
+
+.callout-box.danger {
+  border-left-color: var(--danger-color, #6b2d3c);
+}
+
+.callout-box.info {
+  border-left-color: var(--secondary-accent, #1e3a5f);
+}
+
+/* ========================================
+   GRID LAYOUTS - Editorial Magazine
+   ======================================== */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin: 32px 0;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 32px 0;
+}
+
+.recommendation-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ========================================
+   CONTENT BLOCKS - Editorial Sections
+   ======================================== */
+.content-block {
+  margin-bottom: 28px;
+}
+
+.content-block:last-child {
+  margin-bottom: 0;
+}
+.mt-3-tight { margin-top: 28px; }
+
+.bullet-list,
+.numbered-list {
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+.bullet-list li {
+  list-style: disc;
+  position: relative;
+  padding-left: 0;
+  margin-left: 18px;
+  margin-bottom: 10px;
+  color: var(--ink-medium, #3d3d3d);
+  font-size: 10.5pt;
+  line-height: 1.6;
+}
+
+.bullet-list li::marker {
+  color: var(--ink-black, #0a0a0a);
+}
+
+.numbered-list {
+  list-style: none;
+  counter-reset: listCounter;
+}
+
+.numbered-list li {
+  counter-increment: listCounter;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 12px;
+  color: var(--ink-medium, #3d3d3d);
+  font-size: 10.5pt;
+  line-height: 1.6;
+}
+
+.numbered-list li::before {
+  content: counter(listCounter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  color: var(--ink-black, #0a0a0a);
+}
+
+.two-column-text {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  margin: 24px 0;
+}
+
+/* Three-column recommendations */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.recommendation-card {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.recommendation-text {
+  font-size: 9pt;
+  line-height: 1.5;
+  color: var(--ink-light, #6b6b6b);
+  margin-top: 16px;
+}
+
+.faq-page .page-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.faq-page .two-column-grid {
+  margin: 12px 0;
+}
+
+.faq-page .callout-box {
+  margin: 0 0 12px;
+}
+
+.callout-text {
+  margin-top: 8px;
+}
+
+.callout-text + .callout-text {
+  margin-top: 8px;
+}
+
+.callout-heading {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.callout-box h4 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ========================================
+   PLACEHOLDERS - Minimalist Infographics
+   ======================================== */
+.infographic-placeholder {
+  border: 1px solid var(--neutral-300, #e0e0de);
+  background: var(--neutral-100, #fafaf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink-light, #6b6b6b);
+  font-size: 9pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  min-height: 140px;
+  padding: 16px;
+}
+
+.infographic-frame {
+  border: 1px solid var(--neutral-300, #e0e0de);
+  background: var(--neutral-100, #fafaf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.infographic-frame.tall {
+  min-height: 220px;
+}
+
+.infographic-frame.short {
+  height: 120px;
+}
+
+.infographic-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.infographic-image.lifestyle-image {
+  object-position: 50% 70%;
+}
+
+.infographic-placeholder.tall {
+  min-height: 220px;
+}
+
+.infographic-placeholder.short {
+  min-height: 100px;
+}
+
+.infographic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.infographic-strip {
+  border: 1px dashed var(--neutral-300, #e0e0de);
+  background: transparent;
+  color: var(--ink-light, #6b6b6b);
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+/* ========================================
+   TAGS - Minimalist Labels
+   ======================================== */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  border: 1px solid var(--neutral-300, #e0e0de);
+  padding: 6px 10px;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-light, #6b6b6b);
+}
+
+/* ========================================
+   FAQ STYLING - Editorial Q&A
+   ======================================== */
+.faq-item {
+  margin-bottom: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--neutral-200, #f0f0ee);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: var(--ink-black, #0a0a0a);
+  margin-bottom: 12px;
+  font-size: 13pt;
+}
+
+.faq-item p {
+  color: var(--ink-medium, #3d3d3d);
+}
+
+/* ========================================
+   REFERENCES - Magazine Bibliography
+   ======================================== */
+.references-list {
+  column-count: 2;
+  column-gap: 32px;
+  font-size: 8pt;
+  line-height: 1.45;
+  color: var(--ink-light, #6b6b6b);
+}
+
+.references-list li {
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mt-5 { margin-top: 40px; }
+.mt-6 { margin-top: 48px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+.mb-5 { margin-bottom: 40px; }
+.mb-6 { margin-bottom: 48px; }
+
+.text-positive { color: var(--success-color, #2d5a47); }
+.text-negative { color: var(--danger-color, #6b2d3c); }
+.text-neutral { color: var(--warning-color, #9a8355); }
+.text-muted { color: var(--ink-light, #6b6b6b); }
+
+/* ========================================
+   TAILWIND OVERRIDES - Sharp Corners
+   ======================================== */
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl,
+.rounded-full,
+.rounded-md,
+.rounded-sm,
+.rounded {
+  border-radius: 0 !important;
+}

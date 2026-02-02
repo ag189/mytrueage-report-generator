@@ -7,7 +7,7 @@ export default function SciencePage() {
   return (
     <PageWrapper pageNumber={6}>
       <PageHeader
-        title="The Science Behind myDNAge"
+        title="The Science Behind AgePath"
         subtitle="Epigenetic clocks and population calibration"
         icon={Microscope}
       />
@@ -28,7 +28,7 @@ export default function SciencePage() {
           <div className="content-block">
             <h3>How We Measure Biological Age</h3>
             <p className="mt-2">
-              Your myDNAge results are derived from DNA methylation patterns in
+              Your AgePath results are derived from DNA methylation patterns in
               blood. Methylation is a chemical tag that affects gene expression
               without changing the DNA sequence. These patterns shift in predictable
               ways with aging.

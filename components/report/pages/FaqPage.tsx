@@ -11,7 +11,7 @@ export default function FaqPage() {
       <div className="two-column-grid">
         <div>
           <div className="faq-item">
-            <h3>How accurate is myDNAge?</h3>
+            <h3>How accurate is AgePath?</h3>
             <p>
               PCGrimAge and DunedinPACE are among the most validated epigenetic
               algorithms. Results are informative estimates, not absolute values.

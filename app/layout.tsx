@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "myDNAge Report Generator",
-  description: "Generate professional biological aging reports with myDNAge",
+  title: "AgePath Report Generator",
+  description: "Generate professional biological aging reports with AgePath",
 };
 
 export default function RootLayout({

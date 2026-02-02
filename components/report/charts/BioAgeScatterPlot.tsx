@@ -32,62 +32,60 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
   // User's data point
   const userData = [{ chronoAge: chronologicalAge, bioAge: biologicalAge, label: 'YOU' }];
 
+  const QuadrantOverlay: React.FC<any> = ({ xAxisMap, yAxisMap }) => {
+    if (!xAxisMap || !yAxisMap) return null;
+    const xAxis = Object.values(xAxisMap)[0] as { scale?: (value: number) => number };
+    const yAxis = Object.values(yAxisMap)[0] as { scale?: (value: number) => number };
+    if (!xAxis || !yAxis || !xAxis.scale || !yAxis.scale) return null;
+
+    const xScale = xAxis.scale;
+    const yScale = yAxis.scale;
+    const x20 = xScale(20);
+    const x80 = xScale(80);
+    const y20 = yScale(20);
+    const y80 = yScale(80);
+
+    return (
+      <g>
+        <polygon
+          points={`${x20},${y80} ${x80},${y80} ${x20},${y20}`}
+          fill="#6b2d3c"
+          opacity={0.06}
+        />
+        <polygon
+          points={`${x20},${y20} ${x80},${y20} ${x80},${y80}`}
+          fill="#2d5a47"
+          opacity={0.06}
+        />
+        <text
+          x={x20 + 12}
+          y={y80 + 18}
+          fill="#6b2d3c"
+          fontSize="8"
+          fontFamily="'Inter', sans-serif"
+          style={{ textTransform: 'uppercase', letterSpacing: '0.08em' }}
+        >
+          Faster aging (B &gt; C)
+        </text>
+        <text
+          x={x80 - 120}
+          y={y20 - 10}
+          fill="#2d5a47"
+          fontSize="8"
+          fontFamily="'Inter', sans-serif"
+          style={{ textTransform: 'uppercase', letterSpacing: '0.08em' }}
+        >
+          Slower aging (B &lt; C)
+        </text>
+      </g>
+    );
+  };
+
   return (
     <div style={{ width: '100%', maxWidth: '460px', margin: '0 auto' }}>
       <ResponsiveContainer width="100%" aspect={1} minWidth={300}>
         <ScatterChart margin={{ top: 20, right: 20, bottom: 44, left: 52 }}>
-          <Customized
-            component={({ xAxisMap, yAxisMap }) => {
-              if (!xAxisMap || !yAxisMap) return null;
-              const xAxis = Object.values(xAxisMap)[0];
-              const yAxis = Object.values(yAxisMap)[0];
-              if (!xAxis || !yAxis || !xAxis.scale || !yAxis.scale) return null;
-
-              const xScale = xAxis.scale;
-              const yScale = yAxis.scale;
-              const x20 = xScale(20);
-              const x80 = xScale(80);
-              const y20 = yScale(20);
-              const y80 = yScale(80);
-
-              return (
-                <g>
-                  <polygon
-                    points={`${x20},${y80} ${x80},${y80} ${x20},${y20}`}
-                    fill="#6b2d3c"
-                    opacity={0.06}
-                  />
-                  <polygon
-                    points={`${x20},${y20} ${x80},${y20} ${x80},${y80}`}
-                    fill="#2d5a47"
-                    opacity={0.06}
-                  />
-                  <text
-                    x={x20 + 12}
-                    y={y80 + 18}
-                    fill="#6b2d3c"
-                    fontSize="8"
-                    fontFamily="'Inter', sans-serif"
-                    textTransform="uppercase"
-                    letterSpacing="0.08em"
-                  >
-                    Faster aging (B &gt; C)
-                  </text>
-                  <text
-                    x={x80 - 120}
-                    y={y20 - 10}
-                    fill="#2d5a47"
-                    fontSize="8"
-                    fontFamily="'Inter', sans-serif"
-                    textTransform="uppercase"
-                    letterSpacing="0.08em"
-                  >
-                    Slower aging (B &lt; C)
-                  </text>
-                </g>
-              );
-            }}
-          />
+          <Customized component={QuadrantOverlay} />
           <CartesianGrid 
             strokeDasharray="none" 
             stroke="#e0e0de" 
@@ -201,7 +199,7 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
               fill="#b3261e" 
               fontSize={9} 
               fontFamily="'Inter', sans-serif" 
-              formatter={(value: string) => value}
+              formatter={(value) => (value == null ? '' : String(value))}
             />
           </Scatter>
 

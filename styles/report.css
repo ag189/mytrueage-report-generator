@@ -503,37 +503,59 @@
 
 .cover-card {
   background: rgba(255, 255, 255, 0.96);
-  padding: 36px 32px;
-  min-height: 140px;
+  padding: 16px 36px;
+  min-height: 0;
   width: 100%;
   max-width: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
 }
 
-.cover-card-left {
-  flex: 1;
-  min-width: 0;
-}
-
-.cover-card-right {
+.cover-card-main {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
-  text-align: right;
+  align-items: center;
+  text-align: center;
+  gap: 0;
 }
 
 .cover-partner-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 4px;
   margin: 0;
   padding: 0;
+}
+
+.cover-card-partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.cover-partners-labels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  column-gap: 48px;
+  width: 100%;
+  justify-items: start;
+}
+
+.cover-partners-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  column-gap: 48px;
+  width: 100%;
+  justify-items: start;
+  align-items: center;
+  position: relative;
 }
 
 .cover-bottom {
@@ -591,22 +613,49 @@
 }
 
 .cover-brand-logo {
-  width: 320px;
+  width: 480;
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  margin: 0 0 10px;
-  display: block;
+  margin: 0 0 10px 0;
+  display: flex;
 }
 
 .cover-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 14pt;
-  font-weight: 300;
-  line-height: 1.5;
+  font-size: 40.5pt;
+  font-weight: 400;
   color: var(--ink-dark, #1a1a1a);
-  max-width: 440px;
+  max-width: 620px;
   margin: 8px 0 0;
+  text-align: center;
+}
+
+.cover-logo-partner {
+  width: 205px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cover-logo-partner.cover-logo-genepath {
+  /* Freely adjustable - change these values without affecting layout */
+  position: absolute;
+  left: calc(48.75%); /* 50% = start of second column, 24px = half of column-gap */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 205px;
+  height: 220px;
+}
+
+.cover-partner-block {
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-powered {
+  margin: 0;
 }
 
 /* ========================================
@@ -906,11 +955,12 @@
 
 /* Stacked callout boxes - reduce spacing between them */
 .callout-stack .callout-box {
-  margin: 0 0 16px 0;
+  margin: 0 0 60px 0;
 }
 
 .callout-stack .callout-box:last-child {
-  margin-bottom: 0;
+  margin-bottom: 12px
+;
 }
 
 /* Callout with QR code – text left, QR right constrained */

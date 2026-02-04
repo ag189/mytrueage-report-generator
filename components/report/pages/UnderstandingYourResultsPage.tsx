@@ -3,7 +3,7 @@ import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
 import { Brain } from 'lucide-react';
 
-export default function UnderstandingResultsPage() {
+export default function UnderstandingYourResultsPage() {
   return (
     <PageWrapper pageNumber={5}>
       <PageHeader

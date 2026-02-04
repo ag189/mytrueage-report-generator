@@ -17,24 +17,24 @@ export default function CoverPage({ data }: CoverPageProps) {
           <div className="cover-hero-overlay" />
           <div className="cover-hero-content">
             <div className="cover-card">
-              <div className="cover-card-left">
+              <div className="cover-card-main">
                 <img
                   src="/images/age-path-logo.png"
                   alt="AgePath"
                   className="cover-brand-logo"
                 />
                 <p className="cover-subtitle">
-                  Scientific Insights to reverse the pace of aging
+                  Scientific Insights to Reverse Your Pace of Aging
                 </p>
               </div>
-              <div className="cover-card-right">
-                <div className="cover-partner-block">
+              <div className="cover-card-partners">
+                <div className="cover-partners-labels">
                   <p className="cover-powered">Brought to you by</p>
-                  <img className="cover-logo cover-logo-small" src="/images/ph-logo.png" alt="Preventive Health" />
-                </div>
-                <div className="cover-partner-block">
                   <p className="cover-powered">Powered by</p>
-                  <img className="cover-logo" src="/images/gp-logo.png" alt="GenePathDX" />
+                </div>
+                <div className="cover-partners-logos">
+                  <img className="cover-logo cover-logo-partner" src="/images/ph-logo.png" alt="Preventive Health" />
+                  <img className="cover-logo cover-logo-partner cover-logo-genepath" src="/images/gp-logo.png" alt="GenePath Diagnostics" />
                 </div>
               </div>
             </div>

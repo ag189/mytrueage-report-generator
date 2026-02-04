@@ -14,7 +14,7 @@ export default function ResourcesPage() {
 
       <div className="content-block">
         <p className="lead-text">
-          Stay connected and keep learning. Join us and share the journey!
+          Stay connected and keep learning. Join our community and share the journey!
         </p>
       </div>
 
@@ -22,12 +22,12 @@ export default function ResourcesPage() {
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
-              <h4>Join the Longevity Lab community.</h4>
+              <h4>Join the Longevity Lab</h4>
               <p className="callout-text">
-                Join a community of over 5,000 members to get access to live webinars,
-                educational content, and more to keep learning about health.
+                Join our community to get free access to live webinars,
+                educational content, and Q/A with experts to make small, daily changes to improve your health. Learn from other member stories and share your journey.
               </p>
-              <p className="callout-qr-cta">Scan the code to join the community</p>
+              <p className="callout-qr-cta">Scan to join the community</p>
             </div>
             <div className="callout-box-qr">
               <img src="/images/community-qr.gif" alt="Community QR code" className="callout-qr-image" />
@@ -38,10 +38,10 @@ export default function ResourcesPage() {
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
-              <h4>Subscribe to our newsletter</h4>
+              <h4>Subscribe to Our Newsletter</h4>
               <p className="callout-text">
-                Get a weekly or bi-weekly insight delivered straight to your inbox about
-                best practices, tips, and interpreting science-backed interventions that
+                Get bi-weekly insights delivered straight to your inbox where we break down the science behind Longevity and Aging. Learn about
+                best practices, health tips, and interpreting science-backed interventions that
                 you can implement in daily life.
               </p>
               <p className="callout-qr-cta">Subscribe to join the newsletter</p>
@@ -55,13 +55,11 @@ export default function ResourcesPage() {
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
-              <h4>Join our menopause-focused care community.</h4>
+              <h4> Menopause & Perimenopause Support </h4>
               <p className="callout-text">
-                Join our exclusive community of women to seek support for menopause or
-                perimenopause. Connect with experts and peers, access tailored resources,
-                and get guidance on symptoms, lifestyle adjustments, and care pathways.
+                Join our dedicated community focused on menopause and perimenopause care built in partnership with Forum Health (US). Learn from other women and gain access to expert annswers from doctors and nurse practioners, live webinars, and personalized support for every step of your journey.
               </p>
-              <p className="callout-qr-cta">Scan the code to join the community</p>
+              <p className="callout-qr-cta">Scan to join the community</p>
             </div>
             <div className="callout-box-qr">
               <img src="/images/menopause-qr.gif" alt="Menopause community QR code" className="callout-qr-image" />

@@ -3,7 +3,7 @@ import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
 import { HelpCircle } from 'lucide-react';
 
-export default function FaqPage() {
+export default function FrequentlyAskedQuestionsPage() {
   return (
     <PageWrapper pageNumber={9} className="faq-page">
       <PageHeader title="Frequently Asked Questions" subtitle="Quick answers to common concerns" icon={HelpCircle} />
@@ -72,20 +72,26 @@ export default function FaqPage() {
         </div>
       </div>
 
-      <div className="callout-box">
-        <h4 className="callout-heading">What should I do next?</h4>
-        <p className="callout-text">
-          Start by reviewing your results in context, then choose one or two areas
+
+      <div className="callout-box callout-box-with-qr info">
+        <div className="callout-box-content">
+          <div className="callout-box-text">
+            <h4>What should I do next?</h4>
+            <p className="callout-text">
+            Start by reviewing your results in context, then choose one or two areas
           with the highest impact for you right now. Focus on a single, achievable
           habit change, track how you feel over time, and consider professional
           guidance if needed. Retesting in 6-12 months helps you measure progress
           and refine your plan.
-        </p>
-        <p className="callout-text">
-          Book your consultation with a specialist to learn more about reversing
-          your age and the aging process.
-        </p>
+            </p>
+            <p className="callout-qr-cta">Scan to schedule a consult</p>
+          </div>
+          <div className="callout-box-qr">
+            <img src="/images/whatsapp-qr.gif" alt="WhatsApp QR code" className="callout-qr-image" />
+          </div>
+        </div>
       </div>
+
     </PageWrapper>
   );
 }

@@ -5,11 +5,11 @@ import { User } from 'lucide-react';
 import { ReportData } from '@/types/report.types';
 import { formatDate } from '@/lib/calculations';
 
-interface PersonalInfoPageProps {
+interface PersonalInformationPageProps {
   data: ReportData;
 }
 
-export default function PersonalInfoPage({ data }: PersonalInfoPageProps) {
+export default function PersonalInformationPage({ data }: PersonalInformationPageProps) {
   return (
     <PageWrapper pageNumber={2}>
       <PageHeader title="Personal Information" icon={User} />
@@ -76,6 +76,48 @@ export default function PersonalInfoPage({ data }: PersonalInfoPageProps) {
             month: 'long', 
             day: 'numeric' 
           })}
+        </p>
+      </div>
+
+      {/* About block */}
+      <div className="section-divider" style={{ marginTop: '32px' }}></div>
+      <div style={{ marginTop: '20px' }}>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '9pt',
+          fontWeight: 500,
+          color: '#6b6b6b',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          marginBottom: '8px'
+        }}>
+         CONTACT
+        </p>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '10pt',
+          fontWeight: 400,
+          color: '#3d3d3d',
+          lineHeight: 1.7,
+          margin: 0
+        }}>
+          GenePath Diagnostics<br/>
+          7th Floor, Manikchand Galleria, <br/>
+          Model Colony, Shivajinagar,<br/>
+          Pune - 411016<br/>
+          Phone: +91 20 6901 5000<br/>
+          <br/>
+        </p>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '9pt',
+          fontWeight: 500,
+          color: '#6b6b6b',
+          marginTop: '10px',
+          marginBottom: 0
+        }}>
+          GenePath Diagnostics India Private Limited  <br/>
+          CIN: U74999PN2019PTC181759
         </p>
       </div>
     </PageWrapper>

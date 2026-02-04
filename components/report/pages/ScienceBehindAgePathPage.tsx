@@ -3,7 +3,7 @@ import PageWrapper from '../layout/PageWrapper';
 import PageHeader from '../layout/PageHeader';
 import { Microscope } from 'lucide-react';
 
-export default function SciencePage() {
+export default function ScienceBehindAgePathPage() {
   return (
     <PageWrapper pageNumber={6}>
       <PageHeader

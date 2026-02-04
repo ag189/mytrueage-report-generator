@@ -4,14 +4,14 @@ import React from 'react';
 import { ReportData } from '@/types/report.types';
 import { calculateMetrics } from '@/lib/calculations';
 import CoverPage from './pages/CoverPage';
-import PersonalInfoPage from './pages/PersonalInfoPage';
-import ResultsPage1 from './pages/ResultsPage1';
-import ResultsPage2 from './pages/ResultsPage2';
-import UnderstandingResultsPage from './pages/UnderstandingResultsPage';
-import SciencePage from './pages/SciencePage';
+import PersonalInformationPage from './pages/PersonalInformationPage';
+import BiologicalAgePage from './pages/BiologicalAgePage';
+import PaceOfAgingPage from './pages/PaceOfAgingPage';
+import UnderstandingYourResultsPage from './pages/UnderstandingYourResultsPage';
+import ScienceBehindAgePathPage from './pages/ScienceBehindAgePathPage';
 import RecommendationsPage from './pages/RecommendationsPage';
 import ResourcesPage from './pages/ResourcesPage';
-import FaqPage from './pages/FaqPage';
+import FrequentlyAskedQuestionsPage from './pages/FrequentlyAskedQuestionsPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import ReferencesPage from './pages/ReferencesPage';
 import '@/styles/report.css';
@@ -27,14 +27,14 @@ export default function ReportPreview({ data }: ReportPreviewProps) {
     <div className="report-preview-container">
       <div className="report-pages-wrapper">
         <CoverPage data={data} />
-        <PersonalInfoPage data={data} />
-        <ResultsPage1 data={data} metrics={metrics} />
-        <ResultsPage2 data={data} metrics={metrics} />
-        <UnderstandingResultsPage />
-        <SciencePage />
+        <PersonalInformationPage data={data} />
+        <BiologicalAgePage data={data} metrics={metrics} />
+        <PaceOfAgingPage data={data} metrics={metrics} />
+        <UnderstandingYourResultsPage />
+        <ScienceBehindAgePathPage />
         <RecommendationsPage />
         <ResourcesPage />
-        <FaqPage />
+        <FrequentlyAskedQuestionsPage />
         <DisclaimerPage />
         <ReferencesPage />
       </div>

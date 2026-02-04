@@ -94,7 +94,7 @@ export default function RecommendationsPage() {
               to improve your biological age and pace of aging. Schedule your consultation
               by calling <strong>+91 96073 00010</strong> or messaging us on WhatsApp.
             </p>
-            <p className="callout-qr-cta">Scan the code to schedule a consult</p>
+            <p className="callout-qr-cta">Scan to schedule a consult</p>
           </div>
           <div className="callout-box-qr">
             <img src="/images/whatsapp-qr.gif" alt="WhatsApp QR code" className="callout-qr-image" />

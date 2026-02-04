@@ -6,12 +6,12 @@ import { Dna } from 'lucide-react';
 import { ReportData, CalculatedMetrics } from '@/types/report.types';
 import { formatAge } from '@/lib/calculations';
 
-interface ResultsPage1Props {
+interface BiologicalAgePageProps {
   data: ReportData;
   metrics: CalculatedMetrics;
 }
 
-export default function ResultsPage1({ data, metrics }: ResultsPage1Props) {
+export default function BiologicalAgePage({ data, metrics }: BiologicalAgePageProps) {
   const comparisonYears = Math.abs(metrics.ageDifference);
   const comparisonPercent = Math.abs(metrics.percentDifference).toFixed(1);
 

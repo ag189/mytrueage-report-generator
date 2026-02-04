@@ -5,12 +5,12 @@ import PaceOfAgingGauge from '../charts/PaceOfAgingGauge';
 import { Activity } from 'lucide-react';
 import { ReportData, CalculatedMetrics } from '@/types/report.types';
 
-interface ResultsPage2Props {
+interface PaceOfAgingPageProps {
   data: ReportData;
   metrics: CalculatedMetrics;
 }
 
-export default function ResultsPage2({ data, metrics }: ResultsPage2Props) {
+export default function PaceOfAgingPage({ data, metrics }: PaceOfAgingPageProps) {
   const comparisonPercent = Math.abs(metrics.pacePercentDiff).toFixed(1);
   const isLower = metrics.pacePercentDiff > 0;
 

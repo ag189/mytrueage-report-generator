@@ -79,9 +79,16 @@ mytrueage-report-generator/
 │       │
 │       ├── pages/
 │       │   ├── CoverPage.tsx            # Page 1: Cover
-│       │   ├── PersonalInfoPage.tsx     # Page 2: Personal details
-│       │   ├── ResultsPage1.tsx         # Page 3: Bio Age results
-│       │   └── ResultsPage2.tsx         # Page 4: Pace of Aging
+│       │   ├── PersonalInformationPage.tsx # Page 2: Personal details
+│       │   ├── BiologicalAgePage.tsx    # Page 3: Bio Age results
+│       │   ├── PaceOfAgingPage.tsx      # Page 4: Pace of Aging
+│       │   ├── UnderstandingYourResultsPage.tsx # Page 5: Results interpretation
+│       │   ├── ScienceBehindAgePathPage.tsx # Page 6: Science background
+│       │   ├── RecommendationsPage.tsx  # Page 7: Recommendations
+│       │   ├── ResourcesPage.tsx        # Page 8: Resources and links
+│       │   ├── FrequentlyAskedQuestionsPage.tsx # Page 9: FAQ
+│       │   ├── DisclaimerPage.tsx       # Page 10: Disclaimer
+│       │   └── ReferencesPage.tsx       # Page 11: References
 │       │
 │       ├── charts/
 │       │   ├── BioAgeScatterPlot.tsx    # Scatter plot chart
@@ -156,8 +163,8 @@ The current implementation includes:
 
 1. **Cover Page** - Branding and title
 2. **Personal Information Page** - Patient details with icons
-3. **Results Page 1** - Biological Age with scatter plot
-4. **Results Page 2** - Pace of Aging with gauge chart
+3. **Biological Age Page** - Biological Age with scatter plot
+4. **Pace of Aging Page** - Pace of Aging with gauge chart
 
 ## Adding More Pages
 

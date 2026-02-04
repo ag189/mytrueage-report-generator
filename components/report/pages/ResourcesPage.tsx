@@ -44,7 +44,7 @@ export default function ResourcesPage() {
                 best practices, health tips, and interpreting science-backed interventions that
                 you can implement in daily life.
               </p>
-              <p className="callout-qr-cta">Subscribe to join the newsletter</p>
+              <p className="callout-qr-cta">Scan to Subscribe</p>
             </div>
             <div className="callout-box-qr">
               <img src="/images/newsletter-qr.gif" alt="Newsletter QR code" className="callout-qr-image" />

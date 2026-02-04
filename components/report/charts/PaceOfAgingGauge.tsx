@@ -47,7 +47,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             top: 0,
             width: '40%',
             height: '100%',
-            background: '#228b52' // Callout green - complementary to brand blue
+            background: '#436436' // hunter-green
           }}></div>
           <div style={{
             position: 'absolute',
@@ -55,7 +55,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             top: 0,
             width: '20%',
             height: '100%',
-            background: '#f9a825' // Bright amber-yellow - complementary to red, green, blue
+            background: '#1b98d6' // blue-bell (normal)
           }}></div>
           <div style={{
             position: 'absolute',
@@ -63,7 +63,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             top: 0,
             width: '40%',
             height: '100%',
-            background: '#c62828' // Bright red - complementary to green
+            background: '#bc2c1a' // brick-ember
           }}></div>
         </div>
 
@@ -125,7 +125,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             fontFamily: "'Inter', sans-serif",
             fontSize: '8pt',
             fontWeight: zone === 'slower' ? 600 : 400,
-            color: zone === 'slower' ? '#228b52' : '#6b6b6b',
+            color: zone === 'slower' ? '#436436' : '#6b6b6b',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
             margin: 0
@@ -148,7 +148,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             fontFamily: "'Inter', sans-serif",
             fontSize: '8pt',
             fontWeight: zone === 'normal' ? 600 : 400,
-            color: zone === 'normal' ? '#f9a825' : '#6b6b6b',
+            color: zone === 'normal' ? '#1b98d6' : '#6b6b6b',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
             margin: 0
@@ -171,7 +171,7 @@ export default function PaceOfAgingGauge({ dunedinPACE }: PaceOfAgingGaugeProps)
             fontFamily: "'Inter', sans-serif",
             fontSize: '8pt',
             fontWeight: zone === 'faster' ? 600 : 400,
-            color: zone === 'faster' ? '#c62828' : '#6b6b6b',
+            color: zone === 'faster' ? '#bc2c1a' : '#6b6b6b',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
             margin: 0

@@ -15,7 +15,7 @@ export default function PageHeader({ title, subtitle, icon: Icon = Dna }: PageHe
         {subtitle && <p className="subtitle">{subtitle}</p>}
       </div>
       <div className="page-header-icon">
-        <Icon size={28} strokeWidth={1.5} />
+        <Icon size={34} strokeWidth={1.5} />
       </div>
     </div>
   );

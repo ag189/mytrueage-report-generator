@@ -4,17 +4,24 @@
   --background: #ffffff;
   --foreground: #0a0a0a;
   
-  /* Premium Color Palette */
+  /* Color palette */
+  --blue-bell: #1b98d6;
+  --deep-twilight: #031a6b;
+  --hunter-green: #436436;
+  --frozen-water: #cdf7f6;
+  --brick-ember: #bc2c1a;
+
+  /* UI */
   --ink-black: #0a0a0a;
   --ink-dark: #1a1a1a;
   --ink-medium: #3d3d3d;
   --ink-light: #6b6b6b;
   --paper-white: #ffffff;
-  --paper-cream: #fafaf8;
-  --accent-gold: #9a8355;
-  --accent-navy: #1e3a5f;
-  --accent-emerald: #2d5a47;
-  --accent-burgundy: #6b2d3c;
+  --paper-cream: #f5faf9;
+  --accent-gold: var(--blue-bell);
+  --accent-navy: var(--deep-twilight);
+  --accent-emerald: var(--hunter-green);
+  --accent-burgundy: var(--brick-ember);
   
   /* Typography */
   --font-heading: 'Instrument Sans', sans-serif;

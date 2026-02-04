@@ -5,7 +5,7 @@ import { BookOpen } from 'lucide-react';
 
 export default function ReferencesPage() {
   return (
-    <PageWrapper pageNumber={10}>
+    <PageWrapper pageNumber={11}>
       <PageHeader title="References" subtitle="Key studies and sources" icon={BookOpen} />
 
       <ol className="references-list">

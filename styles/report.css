@@ -50,7 +50,7 @@
   top: 0;
   bottom: 0;
   width: 8px;
-  background: var(--brand-blue, #1999D6);
+  background: var(--brand-blue);
 }
 
 /* Top-right radial glow - full page, fades naturally to edges (no rectangular clip) */
@@ -60,8 +60,8 @@
   inset: 0;
   background: radial-gradient(
     ellipse 120% 100% at 100% 0%,
-    rgba(25, 153, 214, 0.1) 0%,
-    rgba(25, 153, 214, 0.05) 38%,
+    rgba(27, 152, 214, 0.1) 0%,
+    rgba(27, 152, 214, 0.05) 38%,
     transparent 65%
   );
   pointer-events: none;
@@ -200,23 +200,27 @@
 }
 
 /* ========================================
-   COLOR PALETTE - Refined & Sophisticated
+   COLOR PALETTE
    ======================================== */
 :root {
+  --blue-bell: #1b98d6;
+  --deep-twilight: #031a6b;
+  --hunter-green: #436436;
+  --frozen-water: #cdf7f6;
+  --brick-ember: #bc2c1a;
+
   --primary-accent: #0a0a0a;
-  --secondary-accent: #1e3a5f;
-  --brand-blue: #1999D6;
-  --success-color: #2d5a47;
-  --warning-color: #9a8355;
-  --danger-color: #6b2d3c;
-  --neutral-100: #fafaf8;
-  --neutral-200: #f0f0ee;
-  --neutral-300: #e0e0de;
+  --secondary-accent: var(--deep-twilight);
+  --brand-blue: var(--blue-bell);
+  --success-color: var(--hunter-green);
+  --warning-color: var(--blue-bell);
+  --danger-color: var(--brick-ember);
+  --neutral-100: var(--frozen-water);
+  --neutral-200: #e8f5f5;
+  --neutral-300: #d0ebea;
   --neutral-800: #1a1a1a;
-  /* Editorial paper */
-  --paper-cream: #f7f4f0;
-  /* Callout accent - green complementary to brand blue */
-  --callout-accent-green: #228b52;
+  --paper-cream: #f5faf9;
+  --callout-accent-green: var(--hunter-green);
 }
 
 /* ========================================
@@ -311,15 +315,15 @@
 }
 
 .status-indicator.positive {
-  border-left-color: var(--success-color, #2d5a47);
+  border-left-color: var(--success-color);
 }
 
 .status-indicator.negative {
-  border-left-color: var(--danger-color, #6b2d3c);
+  border-left-color: var(--danger-color);
 }
 
 .status-indicator.neutral {
-  border-left-color: var(--warning-color, #9a8355);
+  border-left-color: var(--warning-color);
 }
 
 /* ========================================
@@ -331,7 +335,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .page-header-content {
@@ -342,7 +346,7 @@
   position: relative;
   flex-shrink: 0;
   margin-left: 16px;
-  color: var(--brand-blue, #1999D6);
+  color: var(--brand-blue);
   opacity: 0.9;
   display: flex;
   align-items: center;
@@ -360,11 +364,11 @@
 }
 
 .page-header-content h2 {
-  margin-bottom: 8px;
+  margin: 0 0 6px 0;
 }
 
 .page-header h2 {
-  margin-bottom: 8px;
+  margin: 0 0 6px 0;
 }
 
 .page-header .subtitle {
@@ -386,7 +390,7 @@
   left: 0;
   right: 0;
   padding: 14px 48px 16px 64px;
-  border-top: 1px solid rgba(25, 153, 214, 0.35);
+  border-top: 1px solid rgba(27, 152, 214, 0.35);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -394,6 +398,23 @@
   font-size: 8pt;
   color: var(--ink-light, #6b6b6b);
   letter-spacing: 0.05em;
+}
+
+.page-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.footer-logo-gp {
+  height: 26px;
 }
 
 .page-number {
@@ -482,7 +503,8 @@
 
 .cover-card {
   background: rgba(255, 255, 255, 0.96);
-  padding: 28px 32px;
+  padding: 36px 32px;
+  min-height: 140px;
   width: 100%;
   max-width: none;
   display: flex;
@@ -543,10 +565,19 @@
   height: auto;
   object-fit: contain;
   margin: 0;
+  padding: 0;
 }
 
+/* Preventive Health logo – larger */
 .cover-logo-small {
-  width: 170px;
+  width: 220px;
+}
+
+/* GenePathDX logo – compact, less space */
+.cover-card-right .cover-partner-block:last-child .cover-logo {
+  width: 120px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .cover-title {
@@ -617,11 +648,11 @@
 }
 
 .result-value.positive {
-  color: var(--success-color, #2d5a47);
+  color: var(--success-color);
 }
 
 .result-value.negative {
-  color: var(--danger-color, #6b2d3c);
+  color: var(--danger-color);
 }
 
 .result-description {
@@ -787,7 +818,7 @@
 }
 
 .bio-age-chart-legend-marker.population {
-  background: #1e3a5f;
+  background: var(--deep-twilight);
   opacity: 0.3;
   border-radius: 50%;
 }
@@ -861,7 +892,7 @@
    ======================================== */
 .callout-box {
   padding: 24px 24px 24px 28px;
-  background: var(--neutral-100, #fafaf8);
+  background: rgba(67, 100, 54, 0.06);
   border-left: 3px solid var(--callout-accent-green);
   margin: 24px 0;
 }
@@ -871,6 +902,74 @@
 .callout-box.danger,
 .callout-box.info {
   border-left-color: var(--callout-accent-green);
+}
+
+/* Callout with QR code – text left, QR right constrained */
+.callout-box-with-qr {
+  padding: 28px 28px 28px 32px;
+  min-height: 140px;
+}
+
+.callout-box-with-qr .callout-box-content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 0;
+}
+
+.callout-box-with-qr .callout-box-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.callout-box-with-qr .callout-box-text .callout-text,
+.callout-box-with-qr .callout-box-text .callout-qr-cta {
+  text-align: left;
+}
+
+.callout-box-with-qr .callout-box-text p + p {
+  margin-top: 12px;
+}
+
+.callout-box-with-qr .callout-box-qr {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: white;
+  overflow: hidden;
+}
+
+.callout-box-with-qr .callout-qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.callout-qr-cta {
+  margin: 22px 0 0;
+  padding: 0;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--callout-accent-green);
+  text-align: left;
+  background: transparent;
+}
+
+.callout-qr-cta::before {
+  content: none;
 }
 
 /* ========================================
@@ -995,6 +1094,62 @@
   margin: 0 0 12px;
 }
 
+/* ========================================
+   RESOURCES PAGE - Compact QR Callout Layout
+   ======================================== */
+.resources-page .page-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+
+.resources-page .lead-text {
+  margin-bottom: 8px;
+}
+
+.resources-page .content-block {
+  margin-bottom: 12px;
+}
+
+.resources-page .content-block:first-of-type {
+  margin-bottom: 16px;
+}
+
+.resources-page .callout-box {
+  margin: 0;
+}
+
+.resources-page .callout-box-with-qr {
+  padding: 18px 20px 18px 24px;
+  min-height: 0;
+}
+
+.resources-page .callout-box-with-qr .callout-box-content {
+  gap: 20px;
+}
+
+.resources-page .callout-box-with-qr .callout-box-qr {
+  max-width: 120px;
+}
+
+.resources-page .callout-box h4 {
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.resources-page .callout-text {
+  font-size: 9.5pt;
+  line-height: 1.45;
+}
+
+.resources-page .callout-text + .callout-text {
+  margin-top: 6px;
+}
+
+.resources-page .callout-qr-cta {
+  margin-top: 12px;
+  font-size: 8pt;
+}
+
 .callout-text {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -1016,12 +1171,13 @@
 .callout-heading {
   text-transform: none;
   letter-spacing: 0;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 .callout-box h4 {
   text-transform: none;
   letter-spacing: 0;
+  margin-bottom: 14px;
 }
 
 /* ========================================
@@ -1043,8 +1199,8 @@
 }
 
 .infographic-frame {
-  border: 1px solid var(--neutral-300, #e0e0de);
-  background: var(--neutral-100, #fafaf8);
+  border: none;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1064,6 +1220,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border: none;
+  outline: none;
+}
+
+.two-column-text .infographic-frame,
+.two-column-text .infographic-image {
+  border: none !important;
 }
 
 .infographic-image.lifestyle-image {
@@ -1172,9 +1335,9 @@
 .mb-5 { margin-bottom: 40px; }
 .mb-6 { margin-bottom: 48px; }
 
-.text-positive { color: var(--success-color, #2d5a47); }
-.text-negative { color: var(--danger-color, #6b2d3c); }
-.text-neutral { color: var(--warning-color, #9a8355); }
+.text-positive { color: var(--success-color); }
+.text-negative { color: var(--danger-color); }
+.text-neutral { color: var(--warning-color); }
 .text-muted { color: var(--ink-light, #6b6b6b); }
 
 /* ========================================

@@ -85,12 +85,21 @@ export default function RecommendationsPage() {
         </div>
       </div>
 
-      <div className="callout-box info">
-        <h4>Next steps</h4>
-        <p className="callout-text">
-          For a personalized session to determine how to improve your biological age
-          and rate of aging, schedule a consultation by calling [xxx-xxx-xxxx].
-        </p>
+      <div className="callout-box callout-box-with-qr info">
+        <div className="callout-box-content">
+          <div className="callout-box-text">
+            <h4>Next Steps</h4>
+            <p className="callout-text">
+              Book a one-on-one session with our specialists to build a personalized plan
+              to improve your biological age and pace of aging. Schedule your consultation
+              by calling <strong>+91 96073 00010</strong> or messaging us on WhatsApp.
+            </p>
+            <p className="callout-qr-cta">Scan the code to schedule a consult</p>
+          </div>
+          <div className="callout-box-qr">
+            <img src="/images/whatsapp-qr.gif" alt="WhatsApp QR code" className="callout-qr-image" />
+          </div>
+        </div>
       </div>
     </PageWrapper>
   );

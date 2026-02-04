@@ -44,12 +44,12 @@ export default function CoverPage({ data }: CoverPageProps) {
         {/* Bottom Section - Minimal footer */}
         <div className="cover-bottom">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ color: '#1999D6' }}>
+            <div style={{ color: 'var(--blue-bell, #1b98d6)' }}>
               <p style={{ 
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '9pt',
                 fontWeight: 500,
-                color: '#1999D6',
+                color: 'var(--blue-bell, #1b98d6)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.15em',
                 margin: 0
@@ -62,7 +62,7 @@ export default function CoverPage({ data }: CoverPageProps) {
               fontFamily: "'Instrument Sans', sans-serif",
               fontSize: '11pt',
               fontWeight: 600,
-              color: '#1999D6',
+              color: 'var(--blue-bell, #1b98d6)',
               letterSpacing: '0.1em'
             }}>
               2026

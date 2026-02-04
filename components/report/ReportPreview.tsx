@@ -10,6 +10,7 @@ import ResultsPage2 from './pages/ResultsPage2';
 import UnderstandingResultsPage from './pages/UnderstandingResultsPage';
 import SciencePage from './pages/SciencePage';
 import RecommendationsPage from './pages/RecommendationsPage';
+import ResourcesPage from './pages/ResourcesPage';
 import FaqPage from './pages/FaqPage';
 import DisclaimerPage from './pages/DisclaimerPage';
 import ReferencesPage from './pages/ReferencesPage';
@@ -32,6 +33,7 @@ export default function ReportPreview({ data }: ReportPreviewProps) {
         <UnderstandingResultsPage />
         <SciencePage />
         <RecommendationsPage />
+        <ResourcesPage />
         <FaqPage />
         <DisclaimerPage />
         <ReferencesPage />

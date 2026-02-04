@@ -53,19 +53,19 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
       <g>
         <polygon
           points={`${x20},${y80} ${x80},${y80} ${x20},${y20}`}
-          fill="#6b2d3c"
+          fill="#bc2c1a"
           opacity={0.05}
         />
         <polygon
           points={`${x20},${y20} ${x80},${y20} ${x80},${y80}`}
-          fill="#2d5a47"
+          fill="#436436"
           opacity={0.05}
         />
         {/* Zone labels inside the chart */}
         <text
           x={x20 + 8}
           y={y80 + 14}
-          fill="#6b2d3c"
+          fill="#bc2c1a"
           fontSize="7"
           fontFamily="'Inter', sans-serif"
           fontWeight="500"
@@ -76,7 +76,7 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
         <text
           x={x80 - 72}
           y={y20 - 6}
-          fill="#2d5a47"
+          fill="#436436"
           fontSize="7"
           fontFamily="'Inter', sans-serif"
           fontWeight="500"
@@ -193,7 +193,7 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
               <Scatter 
                 name="Population" 
                 data={populationData} 
-                fill="#1e3a5f" 
+                fill="#031a6b" 
                 fillOpacity={0.12}
                 shape="circle"
               />
@@ -202,13 +202,13 @@ export default function BioAgeScatterPlot({ chronologicalAge, biologicalAge }: B
               <Scatter 
                 name="Your Result" 
                 data={userData} 
-                fill="#b3261e"
+                fill="#bc2c1a"
                 shape="diamond"
               >
                 <LabelList 
                   dataKey="label" 
                   position="top" 
-                  fill="#b3261e" 
+                  fill="#bc2c1a" 
                   fontSize={10} 
                   fontWeight={600}
                   fontFamily="'Inter', sans-serif" 

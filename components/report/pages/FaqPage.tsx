@@ -5,7 +5,7 @@ import { HelpCircle } from 'lucide-react';
 
 export default function FaqPage() {
   return (
-    <PageWrapper pageNumber={8} className="faq-page">
+    <PageWrapper pageNumber={9} className="faq-page">
       <PageHeader title="Frequently Asked Questions" subtitle="Quick answers to common concerns" icon={HelpCircle} />
 
       <div className="two-column-grid">

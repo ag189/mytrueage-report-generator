@@ -457,7 +457,7 @@
 .cover-hero-image {
   position: absolute;
   inset: 0;
-  background-image: url('/images/cover.jpg');
+  background-image: url('/images/cover.png');
   background-size: cover;
   background-position: right center; /* Align image to the right, showing right half */
 }

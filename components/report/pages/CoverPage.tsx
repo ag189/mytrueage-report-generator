@@ -10,63 +10,44 @@ export default function CoverPage({ data }: CoverPageProps) {
   return (
     <PageWrapper className="cover-page" noPadding>
       <div className="cover-content">
-        {/* Top Section - Image-backed hero */}
+        {/* Top Section - Image */}
         <div className="cover-top">
           <div className="cover-hero-image" />
-          <div className="cover-hero-blur" />
-          <div className="cover-hero-overlay" />
-          <div className="cover-hero-content">
-            <div className="cover-card">
-              <div className="cover-card-main">
-                <img
-                  src="/images/age-path-logo.png"
-                  alt="AgePath"
-                  className="cover-brand-logo"
-                />
-                <p className="cover-subtitle">
-                  Scientific Insights to Reverse Your Pace of Aging
-                </p>
-              </div>
-              <div className="cover-card-partners">
-                <div className="cover-partners-labels">
-                  <p className="cover-powered">Brought to you by</p>
-                  <p className="cover-powered">Powered by</p>
-                </div>
-                <div className="cover-partners-logos">
-                  <img className="cover-logo cover-logo-partner" src="/images/ph-logo.png" alt="Preventive Health" />
-                  <img className="cover-logo cover-logo-partner cover-logo-genepath" src="/images/gp-logo.png" alt="GenePath Diagnostics" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Bottom Section - Minimal footer */}
-        <div className="cover-bottom">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ color: 'var(--blue-bell, #1b98d6)' }}>
-              <p style={{ 
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '9pt',
-                fontWeight: 500,
-                color: 'var(--blue-bell, #1b98d6)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                margin: 0
-              }}>
-                {data.name}
-                {"'"}s Personal Health Report
-              </p>
+        {/* Bottom Section - 2x2 Grid */}
+        <div className="cover-grid">
+          {/* Q1: Top-Left - White - AgePath + Brought to you by */}
+          <div className="cover-grid-q1">
+            <img
+              src="/images/age-path-logo.png"
+              alt="AgePath"
+              className="cover-brand-logo"
+            />
+            <p className="cover-subtitle">
+              Scientific Insights to Reverse Your Pace of Aging
+            </p>
+            <div className="cover-brought-by">
+              <p className="cover-powered">Brought to you by</p>
+              <img className="cover-logo cover-logo-partner" src="/images/ph-logo.png" alt="Preventive Health" />
             </div>
-            <div style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontSize: '11pt',
-              fontWeight: 600,
-              color: 'var(--blue-bell, #1b98d6)',
-              letterSpacing: '0.1em'
-            }}>
-              2026
-            </div>
+          </div>
+
+          {/* Q2: Top-Right - Blue - Empty */}
+          <div className="cover-grid-q2" />
+
+          {/* Q3: Bottom-Left - Blue - Patient Info */}
+          <div className="cover-grid-q3">
+            <p className="cover-bottom-name">
+              {data.name}{"'"}s Personal Health Report
+            </p>
+            <div className="cover-bottom-year">2026</div>
+          </div>
+
+          {/* Q4: Bottom-Right - White - Powered by */}
+          <div className="cover-grid-q4">
+            <p className="cover-powered"><span>Powered by</span></p>
+            <img className="cover-logo cover-logo-footer" src="/images/gp-logo.png" alt="GenePath Diagnostics" />
           </div>
         </div>
       </div>

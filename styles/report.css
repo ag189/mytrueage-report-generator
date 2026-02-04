@@ -429,13 +429,12 @@
    ======================================== */
 .cover-page {
   padding: 0;
-  background: var(--ink-black, #0a0a0a);
+  background: transparent;
   color: var(--paper-white, #ffffff);
 }
 
 .cover-page::before {
-  background: var(--paper-white, #ffffff);
-  opacity: 0.15;
+  display: none;
 }
 
 .cover-content {
@@ -460,107 +459,103 @@
   inset: 0;
   background-image: url('/images/cover.jpg');
   background-size: cover;
-  background-position: center;
-  transform: scale(1.01);
+  background-position: right center; /* Align image to the right, showing right half */
 }
 
 .cover-hero-blur {
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/cover.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(8px);
-  transform: scale(1.05);
-  opacity: 0.85;
-  -webkit-mask-image: radial-gradient(
-    circle at 90% 10%,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.4) 35%,
-    rgba(0, 0, 0, 0) 70%
-  );
-  mask-image: radial-gradient(
-    circle at 90% 10%,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.4) 35%,
-    rgba(0, 0, 0, 0) 70%
-  );
+  display: none; /* Remove blur effect for sharper image */
 }
 
 .cover-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 10, 10, 0.14);
+  display: none; /* Remove overlay for cleaner image */
 }
 
-.cover-hero-content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 64px 48px 64px;
+/* 2x2 Grid Layout for Cover Bottom */
+.cover-grid {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: auto auto;
 }
 
-.cover-card {
-  background: rgba(255, 255, 255, 0.96);
-  padding: 16px 36px;
-  min-height: 0;
-  width: 100%;
-  max-width: none;
+/* Q1: Top-Left - White */
+.cover-grid-q1 {
+  background: #ffffff;
+  padding: 24px 48px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Q2: Top-Right - Blue - Empty */
+.cover-grid-q2 {
+  background: #1b98d6;
+}
+
+/* Q3: Bottom-Left - Blue */
+.cover-grid-q3 {
+  background: #1b98d6;
+  padding: 28px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
+  gap: 2px;
 }
 
-.cover-card-main {
+/* Q4: Bottom-Right - White */
+.cover-grid-q4 {
+  background: #ffffff;
+  padding: 20px 28px; /* Horizontal padding matches logo left position */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0;
-}
-
-.cover-partner-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-
-.cover-card-partners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  width: 100%;
-  margin-top: 12px;
-}
-
-.cover-partners-labels {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
-  column-gap: 48px;
-  width: 100%;
-  justify-items: start;
-}
-
-.cover-partners-logos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
-  column-gap: 48px;
-  width: 100%;
-  justify-items: start;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   position: relative;
 }
 
-.cover-bottom {
-  padding: 48px 64px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Powered by text in Q4 - adjust left position here */
+.cover-grid-q4 .cover-powered {
+  margin-left: 0; /* Adjust this to move text left/right */
+}
+
+.cover-brought-by {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #000000;
+}
+
+/* Override .page p for cover-bottom-name */
+.page p.cover-bottom-name,
+.cover-bottom-name {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12pt !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.cover-bottom-year {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #031a6b;
+  letter-spacing: 0.1em;
+}
+
+.cover-logo-footer {
+  /* Freely adjustable - change width/height without affecting layout */
+  position: absolute;
+  left: 20px;
+  top: 26px;
+  object-position: left center;
 }
 
 .page .cover-powered {
@@ -613,29 +608,29 @@
 }
 
 .cover-brand-logo {
-  width: 480;
+  width: 380px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  margin: 0 0 10px 0;
+  margin: 0;
   display: flex;
 }
 
 .cover-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 40.5pt;
+  font-size: 24pt;
   font-weight: 400;
-  color: var(--ink-dark, #1a1a1a);
-  max-width: 620px;
-  margin: 8px 0 0;
-  text-align: center;
+  color: #000000;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
 }
 
 .cover-logo-partner {
-  width: 205px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
 }
 
 .cover-logo-partner.cover-logo-genepath {
@@ -655,7 +650,7 @@
 }
 
 .cover-powered {
-  margin: 0;
+  padding: 10px;
 }
 
 /* ========================================

@@ -1,6 +1,6 @@
 # myTrueAge Report Generator
 
-A Next.js application for generating professional biological aging test reports with PDF export functionality.
+A Next.js report-generation template for professional biological aging reports with live preview and PDF export.
 
 ## Features
 
@@ -130,6 +130,7 @@ Place in `public/images/`:
 - `cover-graphic.jpg` - Cover page hero image (aging stages)
 - `dna-methylation.svg` - DNA illustration
 - `logo.svg` - GENESSENSE/MEDGENOME logo
+- `cover.png` - Hero background used on the cover (see note below)
 
 #### Icons
 Place in respective folders under `public/icons/`:
@@ -157,18 +158,28 @@ import Image from 'next/image';
 />
 ```
 
-## Current MVP Features (Pages 1-4)
+### Cover Image Exceptions
 
-The current implementation includes:
+- The cover hero uses a CSS background (`/images/cover.png`) to tightly control positioning across desktop/PDF; it intentionally bypasses Next.js `<Image />` and uses `background-size: cover` plus `background-position: right center`.
+- Keep cover assets at sufficient resolution; adjust `background-position`/`background-size` in `styles/report.css` (`.cover-hero-image`) if swapping in a different aspect ratio.
 
-1. **Cover Page** - Branding and title
-2. **Personal Information Page** - Patient details with icons
-3. **Biological Age Page** - Biological Age with scatter plot
-4. **Pace of Aging Page** - Pace of Aging with gauge chart
+## Report Content (Pages 1–11)
+
+1. **Cover Page** – Branding, partner logos, hero image
+2. **Personal Information** – Patient details with iconography
+3. **Biological Age** – Bio age summary plus scatter plot
+4. **Pace of Aging** – DunedinPACE gauge and interpretation
+5. **Understanding Your Results** – Biological age & pace explainer
+6. **Science Behind AgePath** – Epigenetic clock background
+7. **Recommendations** – Lifestyle and supplement guidance
+8. **Resources** – Links and QR codes
+9. **Frequently Asked Questions**
+10. **Disclaimer**
+11. **References**
 
 ## Adding More Pages
 
-To add additional pages (5-13 as per PRD):
+To add additional pages or variants:
 
 1. Create new page component in `components/report/pages/`
 2. Import and add to `ReportPreview.tsx`

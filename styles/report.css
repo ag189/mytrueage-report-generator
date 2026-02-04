@@ -904,6 +904,15 @@
   border-left-color: var(--callout-accent-green);
 }
 
+/* Stacked callout boxes - reduce spacing between them */
+.callout-stack .callout-box {
+  margin: 0 0 16px 0;
+}
+
+.callout-stack .callout-box:last-child {
+  margin-bottom: 0;
+}
+
 /* Callout with QR code – text left, QR right constrained */
 .callout-box-with-qr {
   padding: 28px 28px 28px 32px;
@@ -913,7 +922,7 @@
 .callout-box-with-qr .callout-box-content {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   gap: 28px;
   min-height: 0;
@@ -1092,62 +1101,6 @@
 
 .faq-page .callout-box {
   margin: 0 0 12px;
-}
-
-/* ========================================
-   RESOURCES PAGE - Compact QR Callout Layout
-   ======================================== */
-.resources-page .page-header {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-}
-
-.resources-page .lead-text {
-  margin-bottom: 8px;
-}
-
-.resources-page .content-block {
-  margin-bottom: 12px;
-}
-
-.resources-page .content-block:first-of-type {
-  margin-bottom: 16px;
-}
-
-.resources-page .callout-box {
-  margin: 0;
-}
-
-.resources-page .callout-box-with-qr {
-  padding: 18px 20px 18px 24px;
-  min-height: 0;
-}
-
-.resources-page .callout-box-with-qr .callout-box-content {
-  gap: 20px;
-}
-
-.resources-page .callout-box-with-qr .callout-box-qr {
-  max-width: 120px;
-}
-
-.resources-page .callout-box h4 {
-  margin-bottom: 8px;
-  font-size: 11pt;
-}
-
-.resources-page .callout-text {
-  font-size: 9.5pt;
-  line-height: 1.45;
-}
-
-.resources-page .callout-text + .callout-text {
-  margin-top: 6px;
-}
-
-.resources-page .callout-qr-cta {
-  margin-top: 12px;
-  font-size: 8pt;
 }
 
 .callout-text {

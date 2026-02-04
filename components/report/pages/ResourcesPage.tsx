@@ -5,7 +5,7 @@ import { Link2 } from 'lucide-react';
 
 export default function ResourcesPage() {
   return (
-    <PageWrapper pageNumber={8} className="resources-page">
+    <PageWrapper pageNumber={8}>
       <PageHeader
         title="Resources"
         subtitle="Communities, newsletters, and further reading"
@@ -18,7 +18,7 @@ export default function ResourcesPage() {
         </p>
       </div>
 
-      <div className="content-block">
+      <div className="callout-stack">
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
@@ -34,9 +34,7 @@ export default function ResourcesPage() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="content-block">
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
@@ -53,20 +51,15 @@ export default function ResourcesPage() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="content-block">
         <div className="callout-box callout-box-with-qr info">
           <div className="callout-box-content">
             <div className="callout-box-text">
               <h4>Join our menopause-focused care community.</h4>
               <p className="callout-text">
                 Join our exclusive community of women to seek support for menopause or
-                perimenopause.
-              </p>
-              <p className="callout-text">
-                Connect with experts and peers, access tailored resources, and get guidance
-                on symptoms, lifestyle adjustments, and care pathways.
+                perimenopause. Connect with experts and peers, access tailored resources,
+                and get guidance on symptoms, lifestyle adjustments, and care pathways.
               </p>
               <p className="callout-qr-cta">Scan the code to join the community</p>
             </div>

@@ -38,7 +38,7 @@ export default function UnderstandingYourResultsPage() {
           <div className="infographic-frame tall">
             <img
               className="infographic-image"
-              src="/images/bio-age.png"
+              src="/images/bio-age.jpeg"
               alt="Biological age illustration"
             />
           </div>
